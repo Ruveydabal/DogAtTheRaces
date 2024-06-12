@@ -7,6 +7,27 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Image x:Name="raceTrack" Source="/racetrack.png" Stretch="Fill" Margin="1,0,0,94"/>
+        <RadioButton x:Name="radioButton_Joe" Content="radioButton_Joe&#xD;&#xA;" HorizontalAlignment="Left" Margin="25,352,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked" Height="23"/>
+        <RadioButton x:Name="radioButton_Bob" Content="radioButton_Bob&#xD;&#xA;" HorizontalAlignment="Left" Margin="25,380,0,0" VerticalAlignment="Top" Height="23"/>
+        <RadioButton x:Name="radioButton_Al" Content="radioButton_Al" HorizontalAlignment="Left" Margin="25,406,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked_1"/>
+        <Label x:Name="label_Joe" Content="label_Joe" HorizontalAlignment="Left" Margin="165,345,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Bob" Content="labelBob" HorizontalAlignment="Left" Margin="165,374,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.387,0.634"/>
+        <Label x:Name="label_Al" Content="labelAl" HorizontalAlignment="Left" Margin="165,395,0,0" VerticalAlignment="Top"/>
+        <Image x:Name="dog1" Margin="27,29,699,384" Source="/dog.png" Stretch="Fill" RenderTransformOrigin="-0.217,0.979">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform X="1"/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Image x:Name="dog2" Margin="27,107,698,307" Source="/dog.png" Stretch="Fill"/>
+        <Image x:Name="dog3" Margin="27,207,698,207" Source="/dog.png" Stretch="Fill" RenderTransformOrigin="0.538,-1.729"/>
+        <Image x:Name="dog4" Margin="27,292,698,122" Source="/dog.png" Stretch="Fill" RenderTransformOrigin="-0.272,0.517"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="439,302,0,0" VerticalAlignment="Top" Height="56" Width="79" Click="Button_Click_1"/>
 
     </Grid>
 </Window>
