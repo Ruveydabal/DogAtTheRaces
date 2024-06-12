@@ -76,8 +76,6 @@ namespace DogAtTheRaces
         }
 
 
-
-
         private void dispatcherTimer_Tick(object? sender, EventArgs e)
         {
             
@@ -89,20 +87,26 @@ namespace DogAtTheRaces
             dispatcherTimer.Start();
         }
 
-        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+
+        private void PlaceBet(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void RadioButton_Checked_1(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            guys[0].PlaceBet(10, 1);
+            guys[0].PlaceBet(10, 1);          //dit is hard coded
             guys[0].UpdateLabels();
+        }
+
+        private void radioButton_Bob_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void radioButton_Joe_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void radioButton_Al_Checked(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
