@@ -13,46 +13,49 @@ namespace DogAtTheRaces.classes
     public class Greyhound
     {
         public int startingPosition; // where image starts
-        public int racetracklength; //length of racetrack
-        public Image? myPictureBox = null; //my image object
+        public int racetracklength = 799; //length of racetrack
+        public System.Windows.Controls.Image? myPictureBox = null; //my image object
         public int location = 0; //my location on the racetrack
         public Random Randomizer; //an instance of random
         TransformGroup trGrp = new TransformGroup();
         TranslateTransform trTrf = new TranslateTransform();
-
-
-        public Greyhound(int startingPosition, int racetracklength, Random Randomizer, Image myPictureBox)
+      
+        public Greyhound(int startingPosition, int racetracklength, Random Randomizer, System.Windows.Controls.Image? myPictureBox)
         {
             this.startingPosition = startingPosition;
-            this.racetracklength = racetracklength;
+            this.racetracklength = 799;
             this.Randomizer = Randomizer;
             this.myPictureBox = myPictureBox;
-            trGrp.Children.Add(trTrf);
-            this.myPictureBox.RenderTransform = trGrp;
-            
+            trGrp.Children.Add(trTrf);            
         }
        
-      
-        public bool Run()
+          
+          public bool Run()
         {
             int move = Randomizer.Next(1, 50);    //move foreward either 1,2,3 or 4 spaces at random
             location = location + move;
 
-            
+            trTrf.X = location;
+            trTrf.X = startingPosition + location;
 
            // trTrf.X - myPictureBox.Width >= racetracklength - 20;
 
             trTrf.X = startingPosition + location;   
 
-            if((trTrf.X + myPictureBox.Width) >= (racetracklength - 125))          //klopt dit?
+            if ((trTrf.X + myPictureBox.Width) >= (racetracklength - 125))
             {                   
                 return true;
             }
+
             else
             {
                 return false;
             }
 
+
+
+
+            
 
             //update the posistion of my picturebox on the form like:
             //      mypicturebox.left = startingposistion + location;

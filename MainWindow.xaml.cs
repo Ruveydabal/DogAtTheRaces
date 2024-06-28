@@ -21,6 +21,7 @@ namespace DogAtTheRaces
         System.Windows.Threading.DispatcherTimer dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
         public Greyhound[] GreyhoundArray = new Greyhound[4];
         public Guy[] guys = new Guy[3];
+        Guy selected;
         public MainWindow()
         {
             dispatcherTimer.Tick += dispatcherTimer_Tick;
@@ -74,42 +75,6 @@ namespace DogAtTheRaces
 
            
         }
-
-
-        private void dispatcherTimer_Tick(object? sender, EventArgs e)
-        {
-            
-            
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            dispatcherTimer.Start();
-        }
-
-
-        private void PlaceBet(object sender, RoutedEventArgs e)
-        {
-            guys[0].PlaceBet(10, 1);          //dit is hard coded
-            guys[0].UpdateLabels();
-        }
-
-        private void radioButton_Bob_Checked(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void radioButton_Joe_Checked(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void radioButton_Al_Checked(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-
 
 
         private void dispatcherTimer_Tick(object? sender, EventArgs e)
@@ -194,7 +159,7 @@ namespace DogAtTheRaces
 
             if (int.TryParse(BetAmount.Text, out numberBet) & int.TryParse(DogNumber.Text, out numberDog) & selected != null)
             {
-                // ui
+                
                 if (numberDog <= GreyhoundArray.Length & numberDog >= 1)
                 {
                     selected.PlaceBet(numberBet, (numberDog - 1));
