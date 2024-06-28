@@ -13,17 +13,18 @@ namespace DogAtTheRaces.classes
     public class Greyhound
     {
         public int startingPosition; // where image starts
-        public int racetracklength = 799; //length of racetrack
-        public System.Windows.Controls.Image? myPictureBox; //my image object
+        public int racetracklength; //length of racetrack
+        public Image? myPictureBox = null; //my image object
         public int location = 0; //my location on the racetrack
         public Random Randomizer; //an instance of random
         TransformGroup trGrp = new TransformGroup();
         TranslateTransform trTrf = new TranslateTransform();
-      
-        public Greyhound(int startingPosition, int racetracklength, Random Randomizer, System.Windows.Controls.Image myPictureBox)
+
+
+        public Greyhound(int startingPosition, int racetracklength, Random Randomizer, Image myPictureBox)
         {
             this.startingPosition = startingPosition;
-            this.racetracklength = 799;
+            this.racetracklength = racetracklength;
             this.Randomizer = Randomizer;
             this.myPictureBox = myPictureBox;
             trGrp.Children.Add(trTrf);

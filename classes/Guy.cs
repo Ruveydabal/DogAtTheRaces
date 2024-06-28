@@ -20,7 +20,7 @@ namespace DogAtTheRaces.classes
         public Bet? myBet = null;  //an instance of bet that has his bet
         public int cash;   //how much cash he has 
 
-        public System.Windows.Controls.RadioButton? myRadioButton; //my radio button
+        public RadioButton? myRadioButton; //my radio button
         public System.Windows.Controls.Label? myLabel = null;  //my label
 
         public Guy(string name, int myCash, RadioButton myRadioButton)
@@ -34,13 +34,13 @@ namespace DogAtTheRaces.classes
         {
             if (myBet == null)
             {
-                myLabel.Content = name + " hasn't placed a bet ";
+                myLabel.Content = name + "hasn't placed a bet";
             }
             else
             {
                 myLabel.Content = myBet.GetDescription();
             }
-            myRadioButton.Content = name + " has " + cash + " bucks";
+            myRadioButton.Content = name + "has" + cash + "bucks";
 
             //set my label to my bet's description, and the label on my
             //radio button to show my cash("Joe has 43 bucks")

@@ -14,7 +14,7 @@ namespace DogAtTheRaces.classes
     {
         private int amount;  //the amound of the cash that was bet
         private int dog;  //the number of the dog the bet is on
-        private Guy? bettor;  //the guy who placed the bet
+        private Guy bettor;  //the guy who placed the bet
 
 
         public Bet(int betAmount, int dogToWin, Guy bettor)        
@@ -35,7 +35,7 @@ namespace DogAtTheRaces.classes
             }
             else
             {
-                description = bettor.name + "bets" + this.amount + "on dog" + (this.dog+1) ;
+                 description = bettor.name + "bets" + this.amount + "on dog" + this.dog;
 
             }
 
@@ -47,17 +47,18 @@ namespace DogAtTheRaces.classes
 
         public int PayOut(int winner)
         {
+            
             int payOut;
 
             if (this.dog == winner)
             {
                 Console.Write("the dog won");
-                payOut = amount;
+                payOut = amount;      
             }
             else
             {
                 Console.Write("the dog lost");
-                payOut = -amount;
+                payOut = -amount;   
             }
 
             //the parameter is the winner of the race. if the dog won, 
