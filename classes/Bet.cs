@@ -35,7 +35,7 @@ namespace DogAtTheRaces.classes
             }
             else
             {
-                 description = bettor.name + "bets" + this.amount + "on dog" + this.dog;
+                description = bettor.name + "bets" + this.amount + "on dog" + (this.dog+1) ;
 
             }
 
@@ -47,18 +47,17 @@ namespace DogAtTheRaces.classes
 
         public int PayOut(int winner)
         {
-            //  this.dog == winner;
             int payOut;
 
             if (this.dog == winner)
             {
                 Console.Write("the dog won");
-                payOut = amount;      
+                payOut = amount;
             }
             else
             {
                 Console.Write("the dog lost");
-                payOut = -amount;   
+                payOut = -amount;
             }
 
             //the parameter is the winner of the race. if the dog won, 

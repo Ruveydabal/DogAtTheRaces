@@ -6,9 +6,11 @@ using System.Reflection.Emit;
 using System.Security.RightsManagement;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Automation;
 using System.Windows.Controls;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Converters;
+using RadioButton = System.Windows.Controls.RadioButton;
 
 namespace DogAtTheRaces.classes 
 {
@@ -18,20 +20,27 @@ namespace DogAtTheRaces.classes
         public Bet? myBet = null;  //an instance of bet that has his bet
         public int cash;   //how much cash he has 
 
-        public RadioButton? myRadioButton; //my radio button
+        public System.Windows.Controls.RadioButton? myRadioButton; //my radio button
         public System.Windows.Controls.Label? myLabel = null;  //my label
 
-        public Guy(string name, Bet myBet, int myCash)
+        public Guy(string name, int myCash, RadioButton myRadioButton)
         {
             this.name = name;
             this.myBet = myBet;
             this.cash = myCash;
+            this.myRadioButton = myRadioButton;
         }
         public void UpdateLabels()
         {
-            
-            myLabel.Content = myBet.GetDescription();
-            myRadioButton.Content = name + "has" + cash + "bucks";
+            if (myBet == null)
+            {
+                myLabel.Content = name + " hasn't placed a bet ";
+            }
+            else
+            {
+                myLabel.Content = myBet.GetDescription();
+            }
+            myRadioButton.Content = name + " has " + cash + " bucks";
 
             //set my label to my bet's description, and the label on my
             //radio button to show my cash("Joe has 43 bucks")
@@ -43,7 +52,7 @@ namespace DogAtTheRaces.classes
         }
         public bool PlaceBet(int betAmount, int dogToWin)
         {
-            myBet = new Bet(betAmount, dogToWin, this);
+           
 
             if (betAmount < 5 | betAmount > cash)
             {
@@ -52,6 +61,7 @@ namespace DogAtTheRaces.classes
             }
             else
             {
+                myBet = new Bet(betAmount, dogToWin, this);
                 return true;
             }
 
@@ -64,7 +74,9 @@ namespace DogAtTheRaces.classes
         {
             //myBet moet betalen
 
-            myBet.PayOut(winner);
+             //krijg getal terug     guy cash aanpassen
+            
+            this .cash +=  myBet.PayOut(winner);
 
             ClearBet();
             UpdateLabels();
