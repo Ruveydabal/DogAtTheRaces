@@ -74,10 +74,17 @@ namespace DogAtTheRaces
                 if (GreyhoundArray[i].Run() == true)
                 {
                    dispatcherTimer.Stop();
+
+                    if (GreyhoundArray[0].Run() == true)
+                    {
+                       
+                    }
                    
                 }
+
                 
             }
+
 
 
             //int guyLenght = guys.Length;   heb ik hier iets aan?
@@ -109,6 +116,7 @@ namespace DogAtTheRaces
             {
                 GuyBetName.Content = guys[0].name;
                 selected = guys[0];
+                
             }
         }
 

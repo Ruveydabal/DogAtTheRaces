@@ -43,7 +43,7 @@ namespace DogAtTheRaces.classes
 
             trTrf.X = startingPosition + location;   
 
-            if((trTrf.X + myPictureBox.Width) >= (racetracklength - 120))          //klopt dit?
+            if((trTrf.X + myPictureBox.Width) >= (racetracklength - 125))          //klopt dit?
             {                   
                 return true;
             }
